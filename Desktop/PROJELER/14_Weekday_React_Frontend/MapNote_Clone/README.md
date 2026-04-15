@@ -2,55 +2,55 @@
 
 A simple location-based notes app built with plain JavaScript and Leaflet.
 
-## Overview
+## 🌍 Overview
 
-MapNote Clone lets users place notes on an interactive map, save them in the browser, and revisit them later. Notes include a title, date, and category (Visit, Parking, Home, or Job).
+MapNote Clone is a map-driven note app where users can add points with a title, date, and category. Notes are stored locally in the browser and shown both on the map and in a sidebar list.
 
-## Features
+## ✨ Features
 
-- Interactive Leaflet map
-- Click map to add a new note
-- Save notes in `localStorage`
-- Custom icons for note categories
-- Fly to note location from the list
-- Delete notes with confirmation
-- Responsive sidebar UI
+- 🗺️ Interactive Leaflet map
+- 📌 Tap the map to add a new note
+- 💾 Notes saved in `localStorage`
+- 🏠🚗✈️🧑‍💼 Custom icons for note types
+- ✈️ Fly-to-note animation from the list
+- 🗑️ Delete notes with confirmation
+- 📱 Responsive sidebar for mobile and desktop
 
-## Demo
+## 🎬 Demo
 
 ![MapNote Demo](./demo.gif)
 
-> Replace `./demo.gif` with your actual animated GIF file.
+> Replace `./demo.gif` with your own animated preview file.
 
-## How it works
+## 🚀 How it works
 
-1. The app requests geolocation and centers the map on the current location.
-2. Click anywhere on the map to open the note form.
-3. Enter a title, date, and category.
-4. Notes are displayed in the sidebar and on the map.
-5. Clicking the airplane icon flies the map to the note.
-6. Clicking the trash icon deletes the note.
+1. The app requests location and centers the map on the current position.
+2. Click a map location to open the note form.
+3. Enter a title, date, and choose a category.
+4. Notes appear in the sidebar and as markers on the map.
+5. Use the airplane button to zoom to a note’s location.
+6. Use the trash button to remove a note.
 
-## Files
+## 📁 Project files
 
-- `index.html` — main page structure
-- `style.css` — app styling
-- `js/main.js` — map logic, note handling, and UI updates
-- `js/helpers.js` — helper functions for icons, status labels, and date formatting
-- `js/ui.js` — UI element references and Leaflet icon definitions
-- `images/` — custom marker icons
+- `index.html` — main page layout
+- `style.css` — styling for map and sidebar
+- `js/main.js` — core map and note logic
+- `js/helpers.js` — date formatting, icon selection, and status labels
+- `js/ui.js` — UI selectors and Leaflet marker icons
+- `images/` — custom pin icons for each note type
 
-## Setup
+## ⚙️ Setup
 
 1. Open `index.html` in your browser.
-2. Or use a local server like Live Server in VS Code.
-3. Allow location access if prompted.
+2. Or use a local server such as Live Server in VS Code.
+3. Allow location access when prompted.
 
-## Notes
+## 💡 Notes
 
-- Data is saved locally in the browser, so notes persist until localStorage is cleared.
-- The demo GIF path is a placeholder: add your own `demo.gif` file or update the image link.
+- Notes are saved in the browser, so they remain until `localStorage` is cleared.
+- `demo.gif` is a placeholder — add your own GIF or update the image path.
 
-## License
+## 📜 License
 
 MIT License
