@@ -1,143 +1,56 @@
-# 🗺️ MapNote Clone
+# MapNote Clone
 
-Harita üzerinde not oluşturup, yönetebileceğiniz bir web uygulaması. Leaflet kütüphanesi kullanarak OpenStreetMap entegrasyonu sağlanmıştır.
+A simple location-based notes app built with plain JavaScript and Leaflet.
 
-## 📋 Özellikler
+## Overview
 
-- 🌍 **Interaktif Harita** - OpenStreetMap ile gerçek harita gösterimi
-- 📍 **Not Oluştur** - Harita üzerinde tıklanılan konumda not ekle
-- 🎯 **Konum Takibi** - Kullanıcının mevcut konumunu otomatik olarak haritada göster
-- 🏠 **Not Kategorileri** - Ziyaret, Park Yeri, Ev, İş olmak üzere 4 farklı kategori
-- 💾 **Yerel Depolama** - Notlar localStorage'da otomatik olarak kaydedilir
-- 🗑️ **Not Silme** - Oluşturulan notları silebilme
-- 🚀 **Hızlı Erişim** - Not başlığına tıklayarak o konuma yakınlaş
+MapNote Clone lets users place notes on an interactive map, save them in the browser, and revisit them later. Notes include a title, date, and category (Visit, Parking, Home, or Job).
 
-## 🛠️ Teknolojiler
+## Features
 
-- **HTML5** - Sayfa yapısı
-- **CSS3** - Tasarım ve animasyonlar
-- **JavaScript (ES6+)** - İşlevsellik
-- **Leaflet.js** - Harita kütüphanesi
-- **Bootstrap Icons** - İkonlar
-- **LocalStorage API** - Veri saklama
+- Interactive Leaflet map
+- Click map to add a new note
+- Save notes in `localStorage`
+- Custom icons for note categories
+- Fly to note location from the list
+- Delete notes with confirmation
+- Responsive sidebar UI
 
-## 🎬 Demo
+## Demo
 
-![MapNote Clone Demo](./demo.gif)
+![MapNote Demo](./demo.gif)
 
-> Yukarıdaki GIF'te uygulamanın temel özellikleri gösterilmektedir.
+> Replace `./demo.gif` with your actual animated GIF file.
 
-## 📁 Proje Yapısı
+## How it works
 
-```
-MapNote_Clone/
-├── index.html           # Ana HTML dosyası
-├── style.css            # CSS stilleri
-├── js/
-│   ├── main.js          # Ana uygulama mantığı
-│   ├── helpers.js       # Yardımcı fonksiyonlar (icon, format vb.)
-│   └── ui.js            # DOM elemanları ve harita ikonları
-├── images/              # Harita ikonları
-└── README.md
-```
+1. The app requests geolocation and centers the map on the current location.
+2. Click anywhere on the map to open the note form.
+3. Enter a title, date, and category.
+4. Notes are displayed in the sidebar and on the map.
+5. Clicking the airplane icon flies the map to the note.
+6. Clicking the trash icon deletes the note.
 
-## 📋 Dosya Açıklamaları
+## Files
 
-### main.js
-- Harita başlatma ve yapılandırma
-- Not ekleme/silme işlemleri
-- Form yönetimi
-- LocalStorage ile veri senkronizasyonu
-- `loadMap()` - Harita yükleme
-- `renderNoteCards()` - Notları ekrana bas
-- `renderMarker()` - Harita üzerinde marker göster
-- `deleteNote()` - Not silme
+- `index.html` — main page structure
+- `style.css` — app styling
+- `js/main.js` — map logic, note handling, and UI updates
+- `js/helpers.js` — helper functions for icons, status labels, and date formatting
+- `js/ui.js` — UI element references and Leaflet icon definitions
+- `images/` — custom marker icons
 
-### helpers.js
-- `getNoteIcon()` - Kategori türüne göre ikon seçme
-- `formatDate()` - Tarih formatlama (Türkçe)
-- `getStatus()` - Kategori durumunu Türkçe metne çevirme
+## Setup
 
-### ui.js
-- DOM elemanlarının referansları
-- Leaflet harita ikonları tanımlaması
+1. Open `index.html` in your browser.
+2. Or use a local server like Live Server in VS Code.
+3. Allow location access if prompted.
 
-## 🚀 Nasıl Kullanılır
+## Notes
 
-### Gereksinimler
-- Modern web tarayıcı (Chrome, Firefox, Safari, Edge)
-- İnternet bağlantısı (harita verileri için)
+- Data is saved locally in the browser, so notes persist until localStorage is cleared.
+- The demo GIF path is a placeholder: add your own `demo.gif` file or update the image link.
 
-### Kurulum
+## License
 
-1. **Projeyi klonlayın:**
-```bash
-git clone <repository-url>
-cd MapNote_Clone
-```
-
-2. **Local sunucu başlatın:**
-
-**Python 3 ile:**
-```bash
-python -m http.server 8000
-```
-
-**Node.js ile:**
-```bash
-npx http-server
-```
-
-**VS Code Live Server eklentisi ile:**
-- `index.html` → Sağ tıkla → "Open with Live Server"
-
-3. **Tarayıcıda açın:**
-```
-http://localhost:8000
-```
-
-## 📖 Kullanım Adımları
-
-1. **Harita yüklenir** - Mevcut konum otomatik olarak bulunur, haritada gösterilir
-2. **Konuma tıklayın** - Harita üzerinde herhangi bir yere tıklayarak not ekle panelini aç
-3. **Not detaylarını girin:**
-   - 📝 Başlık
-   - 📅 Tarih
-   - 🏷️ Kategori (Ziyaret/Park Yeri/Ev/İş)
-4. **Ekle düğmesine tıklayın** - Not kaydedilir ve harita üzerinde marker oluşturulur
-5. **Notları yönetin:**
-   - ✈️ Uçak ikonuna tıklayarak o konuma ilerişini göster
-   - 🗑️ Çöp kutusu ikonuna tıklayarak notu silin
-
-## 💾 Veri Depolama
-
-Tüm notlar tarayıcının `localStorage` özelliğinde depolanır:
-- **Anahtar:** `notes`
-- **Format:** JSON dizisi
-- **Kapasität:** ~5-10MB (tarayıcıya göre değişir)
-
-Tarayıcıyı temizlediğinizde veya cache silindiğinde veriler kaybolabilir.
-
-## 🎨 Tasarım Özellikleri
-
-- 📱 Responsive dizayn
-- 🌙 Modern dark tema
-- ⚡ Smooth animasyonlar
-- 🎯 Kullanıcı dostu arayüz
-
-## 🐛 Bilinen Sorunlar
-
-- Coğrafi konum izni verilmezse varsayılan konum (İstanbul) kullanılır
-- Bazı tarayıcılarda HTTPS gerekebilir (localhost hariç)
-
-## 📝 Lisans
-
-Bu proje eğitim amaçlıdır.
-
-## 👨‍💻 Geliştirici
-
-Veysel Demirel
-
----
-
-**Son Güncelleme:** April 2026
+MIT License
